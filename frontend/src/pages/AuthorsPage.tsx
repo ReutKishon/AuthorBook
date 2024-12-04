@@ -1,17 +1,9 @@
 // src/pages/AuthorsPage.tsx
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-} from "@mui/material";
+import { Paper } from "@mui/material";
 import { fetchAuthors } from "../services/api";
 import { Author } from "../types";
+import AuthorCard from "../components/cards/AuthorCard";
 
 const AuthorsPage: React.FC = () => {
   const [authors, setAuthors] = useState<Author[]>([]);
@@ -33,29 +25,13 @@ const AuthorsPage: React.FC = () => {
   }, []);
 
   return (
-    <Paper sx={{ padding: 2 }}>
-      <TableContainer>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Birth Year</TableCell>
-              <TableCell>Books</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {authors.map((author) => (
-              <TableRow key={author.id}>
-                <TableCell>{author.name}</TableCell>
-                <TableCell>{author.birth_year}</TableCell>
-                <TableCell>
-                  <Link to={`/authors/${author.id}`}>View Books</Link>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+    <Paper sx={{ padding: 8 }}>
+      <div>
+        <h2>Authors</h2>
+        {authors.map((author) => (
+          <AuthorCard key={author.id} author={author} />
+        ))}
+      </div>
     </Paper>
   );
 };

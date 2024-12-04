@@ -20,9 +20,9 @@ exports.AppModule = AppModule = __decorate([
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
                 host: 'localhost',
-                port: 5432,
+                port: 5433,
                 username: 'postgres',
-                password: "postgres",
+                password: "9352221",
                 database: 'author_book_system',
                 autoLoadEntities: true,
                 synchronize: true,

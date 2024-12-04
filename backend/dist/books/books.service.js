@@ -21,9 +21,6 @@ let BooksService = class BooksService {
     constructor(booksRepository) {
         this.booksRepository = booksRepository;
     }
-    async findAll() {
-        return this.booksRepository.find();
-    }
     async findBooksByAuthorId(authorId) {
         return this.booksRepository.find({ where: { author: { id: authorId } } });
     }

@@ -6,12 +6,14 @@ import BooksPage from './pages/BooksPage';
 
 const App: React.FC = () => {
   return (
+    <div className='px-8'>
     <Router>
       <Routes>
         <Route path="/" element={<AuthorsPage />} />
-        <Route path="/authors/:id" element={<BooksPage />} />
+        <Route path="/authors/:id/books" element={<BooksPage />} />
       </Routes>
     </Router>
+    </div>
   );
 };
 

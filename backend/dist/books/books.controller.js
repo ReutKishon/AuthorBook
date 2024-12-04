@@ -19,20 +19,11 @@ let BooksController = class BooksController {
     constructor(booksService) {
         this.booksService = booksService;
     }
-    async findAll() {
-        return this.booksService.findAll();
-    }
     async findBooksByAuthorId(id) {
         return this.booksService.findBooksByAuthorId(id);
     }
 };
 exports.BooksController = BooksController;
-__decorate([
-    (0, common_1.Get)(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], BooksController.prototype, "findAll", null);
 __decorate([
     (0, common_1.Get)('/authors/:id'),
     __param(0, (0, common_1.Param)('id')),
