@@ -11,9 +11,9 @@ export class BooksService {
   ) {}
 
   // Fetch all books
-  async findAll(): Promise<Book[]> {
-    return this.booksRepository.find();
-  }
+  // async findAll(): Promise<Book[]> {
+  //   return this.booksRepository.find();
+  // }
 
   // Fetch books by author ID
   async findBooksByAuthorId(authorId: number): Promise<Book[]> {

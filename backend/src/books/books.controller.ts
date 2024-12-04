@@ -7,10 +7,10 @@ export class BooksController {
   constructor(private readonly booksService: BooksService) {}
 
   // Route to fetch all books
-  @Get()
-  async findAll(): Promise<Book[]> {
-    return this.booksService.findAll();
-  }
+  // @Get()
+  // async findAll(): Promise<Book[]> {
+  //   return this.booksService.findAll();
+  // }
 
   // Route to fetch books by author ID
   @Get('/authors/:id')
