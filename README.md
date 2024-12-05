@@ -6,11 +6,14 @@ This is a full-stack application for managing authors and their books, built wit
 
 ## **How to Run the Project**
 
-### **1. Clone the Repository**
+### **1. Generate sample data**
 
 ```bash
-git clone https://github.com/ReutKishon/AuthorBook.git
+cd backend/
+npm run generate-test-data
 ```
+
+
 
 ### **2. Run the following commands**
 
