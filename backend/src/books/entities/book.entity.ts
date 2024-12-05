@@ -14,7 +14,13 @@ export class Book {
 
   @Column()
   genre: string;
+  
+  @Column({ nullable: true })
+  about: string | null;
 
-  @ManyToOne(() => Author, author => author.books)
+  @Column({ nullable: true })
+  rating: number | null;
+
+  @ManyToOne(() => Author, (author) => author.books)
   author: Author;
 }

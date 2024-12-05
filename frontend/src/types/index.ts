@@ -11,5 +11,7 @@ export interface Book {
   title: string;
   publication_year: number;
   genre: string;
+  about:string;
+  rating: number;
   authorId: number;
 }

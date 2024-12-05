@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchAuthors } from "../services/api";
 import { Author } from "../types";
 import AuthorCard from "../components/cards/AuthorCard";
-import Title from "../components/shared/Title";
+import Title from "../components/shared/page/Title";
 
 const AuthorsPage = () => {
   const [authors, setAuthors] = useState<Author[]>([]);

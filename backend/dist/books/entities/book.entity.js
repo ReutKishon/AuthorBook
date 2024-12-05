@@ -32,7 +32,15 @@ __decorate([
     __metadata("design:type", String)
 ], Book.prototype, "genre", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => author_entity_1.Author, author => author.books),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Book.prototype, "about", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", Number)
+], Book.prototype, "rating", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => author_entity_1.Author, (author) => author.books),
     __metadata("design:type", author_entity_1.Author)
 ], Book.prototype, "author", void 0);
 exports.Book = Book = __decorate([

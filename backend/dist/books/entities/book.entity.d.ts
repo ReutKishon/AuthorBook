@@ -4,5 +4,7 @@ export declare class Book {
     title: string;
     publication_year: number;
     genre: string;
+    about: string | null;
+    rating: number | null;
     author: Author;
 }
