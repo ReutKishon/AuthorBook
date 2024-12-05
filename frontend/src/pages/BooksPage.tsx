@@ -18,7 +18,6 @@ const BooksPage = () => {
         try {
           const booksData = await fetchBooks(Number(id));
           const authorData = await fetchAuthorById(Number(id));
-          console.log(booksData);
           setBooks(booksData);
           setAuthorData(authorData);
         } catch (err: any) {

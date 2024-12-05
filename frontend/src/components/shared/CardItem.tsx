@@ -73,7 +73,7 @@ const CardItem = ({ title, info, about, rating, onClick }: CardItemProps) => {
         {onClick && (
           <CardActions>
             <Button color="secondary" onClick={onClick} size="medium">
-              {title.split(" ")[0]}'s books
+              view books
             </Button>
           </CardActions>
         )}
