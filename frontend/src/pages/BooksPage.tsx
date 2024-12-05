@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchBooks, fetchAuthorById } from "../services/api";
-import Title from "../components/shared/Title";
 import BookCard from "../components/cards/BookCard";
 import { Author, Book } from "../types";
+import Page from "../components/shared/Page";
 
 const BooksPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -32,14 +32,13 @@ const BooksPage = () => {
   }, [id]);
 
   return (
-    <div className="h-screen flex flex-col items-center justify-start gap-2 pt-12">
-      <Title title={`Books By ${authorData?.name}`} />
+    <Page title={`Books By ${authorData?.name}`}>
       <div className="max-h-screen overflow-y-auto no-scrollbar">
         {books?.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}
       </div>
-    </div>
+    </Page>
   );
 };
 

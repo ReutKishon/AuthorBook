@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { fetchAuthors } from "../services/api";
 import { Author } from "../types";
 import AuthorCard from "../components/cards/AuthorCard";
-import Title from "../components/shared/Title";
+import { Pageview } from "@mui/icons-material";
+import Page from "../components/shared/Page";
 
 const AuthorsPage = () => {
   const [authors, setAuthors] = useState<Author[]>([]);
@@ -24,14 +25,13 @@ const AuthorsPage = () => {
   }, []);
 
   return (
-    <div className="h-screen flex flex-col items-center justify-start gap-2 pt-12">
-      <Title title="Authors" />
+    <Page title="Authors">
       <div className="max-h-screen overflow-y-auto no-scrollbar">
         {authors.map((author) => (
           <AuthorCard key={author.id} author={author} />
         ))}
       </div>
-    </div>
+    </Page>
   );
 };
 

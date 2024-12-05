@@ -1,10 +1,10 @@
 # Author-Book Management System
 
-This is a full-stack application for managing authors and their books, built with **NestJS** (backend) and **React** (frontend).
+This is a web application for displaying authors and their books, built with **NestJS** (backend) and **React** (frontend).
 
 ---
 
-## **How to Run the Project**
+## **How to run the project**
 
 ### **1. Generate sample data**
 
@@ -15,20 +15,27 @@ npm run generate-test-data
 
 
 
-### **2. Run the following commands**
+### **2. Install dependencies**
 
 ```bash
 
 npm run install-all
+```
+### **3. Run backend and frontend**
+```bash
 npm run start-all
 ```
-Access the Applications:
+The appliction is served under:
 
 Frontend: http://localhost:4000
 
+The API is served under:
+
+
 Backend: http://localhost:3000
 
-## **Database Setup**
+## **Local development**
+ insure you have the following .env file in you root folder with the following environment variables:
 
 ```bash
 DATABASE_HOST=localhost
