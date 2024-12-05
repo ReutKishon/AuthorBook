@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { fetchAuthors } from "../services/api";
-import { Author } from "../types";
-import AuthorCard from "../components/cards/AuthorCard";
-import { Pageview } from "@mui/icons-material";
-import Page from "../components/shared/Page";
+import { Author } from "../../types";
+import Page from "../../components/Page";
+import AuthorCard from "./AuthorCard";
+import { fetchAuthors } from "../../services/api";
 
 const AuthorsPage = () => {
   const [authors, setAuthors] = useState<Author[]>([]);

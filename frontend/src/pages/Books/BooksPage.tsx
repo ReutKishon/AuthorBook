@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchBooks, fetchAuthorById } from "../services/api";
-import BookCard from "../components/cards/BookCard";
-import { Author, Book } from "../types";
-import Page from "../components/shared/Page";
+import { fetchBooks, fetchAuthorById } from "../../services/api";
+import BookCard from "./BookCard";
+import { Author, Book } from "../../types";
+import Page from "../../components/Page";
 
 const BooksPage = () => {
   const { id } = useParams<{ id: string }>();

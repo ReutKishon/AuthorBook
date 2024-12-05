@@ -17,7 +17,7 @@ interface CardItemProps {
 
 const CustomCard = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="max-w-2xl p-4 rounded-lg">
+  
       <Card
         sx={{
           margin: 3,
@@ -29,7 +29,7 @@ const CustomCard = ({ children }: { children: React.ReactNode }) => {
       >
         {children}
       </Card>
-    </div>
+    
   );
 };
 
