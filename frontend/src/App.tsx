@@ -5,7 +5,6 @@ import BooksPage from "./pages/BooksPage";
 import "./index.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import bookcase from "./assets/images/bookcase.jpg";
-import { AutoFixHigh } from "@mui/icons-material";
 
 const theme = createTheme({
   typography: {

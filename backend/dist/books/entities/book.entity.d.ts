@@ -1,4 +1,4 @@
-import { Author } from '../../authors/entities/author.entity';
+import { Author } from '../..//authors/entities/author.entity';
 export declare class Book {
     id: number;
     title: string;

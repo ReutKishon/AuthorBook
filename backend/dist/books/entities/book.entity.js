@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Book = void 0;
-const author_entity_1 = require("../../authors/entities/author.entity");
+const author_entity_1 = require("../..//authors/entities/author.entity");
 const typeorm_1 = require("typeorm");
 let Book = class Book {
 };
