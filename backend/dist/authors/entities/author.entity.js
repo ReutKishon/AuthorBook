@@ -28,7 +28,15 @@ __decorate([
     __metadata("design:type", Number)
 ], Author.prototype, "birth_year", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => book_entity_1.Book, book => book.author),
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Author.prototype, "about", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", Number)
+], Author.prototype, "rating", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => book_entity_1.Book, (book) => book.author),
     __metadata("design:type", Array)
 ], Author.prototype, "books", void 0);
 exports.Author = Author = __decorate([

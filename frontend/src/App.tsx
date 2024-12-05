@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AuthorsPage from './pages/AuthorsPage';
 import BooksPage from './pages/BooksPage';
+import './index.css'; 
 
-
-const App: React.FC = () => {
+const App = () => {
   return (
     <div className='px-8'>
     <Router>

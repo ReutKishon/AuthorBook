@@ -2,6 +2,8 @@ export interface Author {
   id: number;
   name: string;
   birth_year: number;
+  about: string;
+  rating: number;
 }
 
 export interface Book {

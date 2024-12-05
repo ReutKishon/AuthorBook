@@ -12,6 +12,12 @@ export class Author {
   @Column()
   birth_year: number;
 
-  @OneToMany(() => Book, book => book.author)
+  @Column({ nullable: true })
+  about: string | null;
+
+  @Column({ nullable: true })
+  rating: number | null;
+
+  @OneToMany(() => Book, (book) => book.author)
   books: Book[];
 }

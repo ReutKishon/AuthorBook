@@ -1,11 +1,10 @@
-// src/pages/AuthorsPage.tsx
 import React, { useEffect, useState } from "react";
-import { Paper } from "@mui/material";
 import { fetchAuthors } from "../services/api";
 import { Author } from "../types";
 import AuthorCard from "../components/cards/AuthorCard";
+import Title from "../components/shared/Title";
 
-const AuthorsPage: React.FC = () => {
+const AuthorsPage = () => {
   const [authors, setAuthors] = useState<Author[]>([]);
   const [error, setError] = useState<string>("");
 
@@ -25,14 +24,16 @@ const AuthorsPage: React.FC = () => {
   }, []);
 
   return (
-    <Paper sx={{ padding: 8 }}>
-      <div>
-        <h2>Authors</h2>
+    <div className="relative h-screen">
+      <div className="absolute top-12 inset-x-0 flex justify-center">
+        <Title title="Authors" />
+      </div>
+      <div className="flex flex-col items-center justify-start pt-32">
         {authors.map((author) => (
           <AuthorCard key={author.id} author={author} />
         ))}
       </div>
-    </Paper>
+    </div>
   );
 };
 
