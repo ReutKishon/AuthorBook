@@ -6,36 +6,31 @@ This is a web application for displaying authors and their books, built with **N
 
 ## **How to run the project**
 
-### **1. Generate sample data**
-
-```bash
-cd backend/
-npm run generate-test-data
-```
-
-
-
-### **2. Install dependencies**
+### **1. Install dependencies**
 
 ```bash
 
 npm run install-all
 ```
-### **3. Run backend and frontend**
+
+### **2. Generate sample data**
+
 ```bash
-npm run start-all
+cd backend && npm run generate-test-data
 ```
-The appliction is served under:
-
-Frontend: http://localhost:4000
-
-The API is served under:
 
 
-Backend: http://localhost:3000
+
+
+### **3. Run both backend and frontend**
+```bash
+cd backend && npm start
+cd frontend && npm start
+```
+
 
 ## **Local development**
- Insure you have the following .env file in you root folder with the following environment variables:
+ Make sure you have the following .env file in the backend folder with the following environment variables:
 
 ```bash
 DATABASE_HOST=localhost
@@ -44,3 +39,36 @@ DATABASE_USER=postgres
 DATABASE_PASSWORD=yourpassword
 DATABASE_NAME=author_book_system
 ```
+
+as well as .env file in the frontend folder
+
+```bash
+PORT=4000
+```
+
+
+<br/>
+
+Finally, the application is served on:
+
+Frontend: http://localhost:4000
+
+The API is served on:
+
+
+Backend: http://localhost:3000
+
+
+## Testing
+
+Still in progress
+
+Run the tests using
+```bash
+cd backend && npm test
+```
+
+
+## Deployment
+
+TBD
