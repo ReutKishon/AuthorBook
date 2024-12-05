@@ -1,10 +1,11 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from '../app.module';
-import { DataGeneratorService } from '../data-generator/data-generator.service';
+
+import { DataGeneratorService } from './data-generator.service';
+import { DataGeneratorModule } from './data-generator.module';
 
 async function generateData() {
   // Create NestJS application context
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(DataGeneratorModule);
 
   // Get the DataGeneratorService from the app container
   const dataGeneratorService = app.get(DataGeneratorService);
@@ -19,7 +20,8 @@ async function generateData() {
 }
 
 // Run the data generation
-generateData().catch((error) => {
+generateData()
+.catch((error) => {
   console.error('Error generating data:', error);
   process.exit(1); // Exit the process with an error code
 });

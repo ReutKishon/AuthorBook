@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Author } from '../authors/entities/author.entity';
-import { Book } from '../books/entities/book.entity';
 import { faker } from '@faker-js/faker'; // Import faker
+import { Book } from '../src/books/entities/book.entity';
+import { Author } from '../src/authors/entities/author.entity';
 
 @Injectable()
 export class DataGeneratorService {
