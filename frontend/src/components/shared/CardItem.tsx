@@ -17,7 +17,7 @@ interface CardItemProps {
 
 const CardItem = ({ title, info, about, rating, onClick }: CardItemProps) => {
   return (
-    <div className="max-w-2xl p-4 bg-white rounded-lg">
+    <div className="max-w-2xl p-4 rounded-lg">
       <Card
         sx={{
           margin: 3,

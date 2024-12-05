@@ -13,8 +13,8 @@ export class BooksController {
   // }
 
   // Route to fetch books by author ID
-  @Get('/authors/:id')
-  async findBooksByAuthorId(@Param('id') id: number): Promise<Book[]> {
+  @Get(':authorId')
+  async findBooksByAuthorId(@Param('authorId') id: number): Promise<Book[]> {
     return this.booksService.findBooksByAuthorId(id);
   }
 }

@@ -25,8 +25,8 @@ let BooksController = class BooksController {
 };
 exports.BooksController = BooksController;
 __decorate([
-    (0, common_1.Get)('/authors/:id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Get)(':authorId'),
+    __param(0, (0, common_1.Param)('authorId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)

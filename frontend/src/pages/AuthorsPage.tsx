@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchAuthors } from "../services/api";
 import { Author } from "../types";
 import AuthorCard from "../components/cards/AuthorCard";
-import Title from "../components/shared/page/Title";
+import Title from "../components/shared/Title";
 
 const AuthorsPage = () => {
   const [authors, setAuthors] = useState<Author[]>([]);
@@ -24,11 +24,9 @@ const AuthorsPage = () => {
   }, []);
 
   return (
-    <div className="relative h-screen">
-      <div className="absolute top-12 inset-x-0 flex justify-center">
-        <Title title="Authors" />
-      </div>
-      <div className="flex flex-col items-center justify-start pt-32">
+    <div className="h-screen flex flex-col items-center justify-start gap-2 pt-12">
+      <Title title="Authors" />
+      <div className="max-h-screen overflow-y-auto no-scrollbar">
         {authors.map((author) => (
           <AuthorCard key={author.id} author={author} />
         ))}
