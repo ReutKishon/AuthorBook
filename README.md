@@ -35,7 +35,7 @@ The API is served under:
 Backend: http://localhost:3000
 
 ## **Local development**
- insure you have the following .env file in you root folder with the following environment variables:
+ Insure you have the following .env file in you root folder with the following environment variables:
 
 ```bash
 DATABASE_HOST=localhost

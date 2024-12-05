@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BooksPage from "./pages/Books/BooksPage";
 import "./index.css";
@@ -11,6 +10,12 @@ const theme = createTheme({
     fontFamily: "Poppins, Arial, sans-serif",
     fontWeightBold: "bold",
   },
+  palette:  {
+    primary: {
+      main: "#ffff",
+    },
+   
+  }
 });
 const App = () => {
   const appStyle = {
@@ -27,7 +32,7 @@ const App = () => {
         <Router>
           <Routes>
             <Route path="/" element={<AuthorsPage />} />
-            <Route path="/authors/:id/books" element={<BooksPage />} />
+            <Route path="/authors/:authorId/books" element={<BooksPage />} />
           </Routes>
         </Router>
       </div>

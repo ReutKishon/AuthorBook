@@ -1,35 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { Author } from "../../types";
 import Page from "../../components/Page";
 import AuthorCard from "./AuthorCard";
-import { fetchAuthors } from "../../services/api";
+import Loading from "../../components/Loading";
+import ErrorNotification from "../../components/ErrorNotification";
+import { useAuthors } from "../../services/hooks";
+import { CircularProgress, Snackbar } from "@mui/material";
 
 const AuthorsPage = () => {
-  const [authors, setAuthors] = useState<Author[]>([]);
-  const [error, setError] = useState<string>("");
-
-  useEffect(() => {
-    const getAuthors = async () => {
-      try {
-        const authorsData = await fetchAuthors();
-        setAuthors(authorsData);
-      } catch (err: any) {
-        setError(
-          "An error occurred while fetching authors. Please try again later."
-        );
-      }
-    };
-
-    getAuthors();
-  }, []);
+  const { data: authors, isLoading, isError } = useAuthors();
 
   return (
-    <Page title="Authors">
-      <div className="max-h-screen overflow-y-auto no-scrollbar">
-        {authors.map((author) => (
-          <AuthorCard key={author.id} author={author} />
-        ))}
+    <Page title="Authors" showBackButton={false}>
+       {isLoading && <div className="w-full h-full flex justify-center items-center">
+        <CircularProgress size={50} color="primary" />
+        </div>}
+      <div className="max-h-screen overflow-y-auto no-scrollbar w-full">
+       
+        {!isLoading &&
+          authors?.map((author) => (
+            <AuthorCard key={author.id} author={author} />
+          ))}
       </div>
+      <Snackbar
+        open={isError}
+        autoHideDuration={9000}
+        message="We had a problem to load the requested data :("
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "center",
+        }}
+      />
     </Page>
   );
 };

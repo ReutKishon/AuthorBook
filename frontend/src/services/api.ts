@@ -16,7 +16,7 @@ export const fetchAuthors = async (): Promise<Author[]> => {
   }
 };
 
-export const fetchBooks = async (authorId: number): Promise<Book[]> => {
+export const fetchBooksByAuthor = async (authorId: string): Promise<Book[]> => {
   try {
     const response = await api.get(`/books/${authorId}`);
     return response.data;
@@ -26,7 +26,7 @@ export const fetchBooks = async (authorId: number): Promise<Book[]> => {
   }
 };
 
-export const fetchAuthorById = async (authorId: number): Promise<Author> => {
+export const fetchAuthorById = async (authorId: string): Promise<Author> => {
   try {
     const response = await api.get(`/authors/${authorId}`);
     return response.data;

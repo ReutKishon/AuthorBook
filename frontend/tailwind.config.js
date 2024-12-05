@@ -10,7 +10,11 @@ module.exports = {
       body: ['"Open Sans"'],
       sora: ["sora"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary:"#FFFF"
+      }
+    },
   },
   plugins: [],
 };

@@ -1,42 +1,35 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { fetchBooks, fetchAuthorById } from "../../services/api";
+import { useNavigate, useParams } from "react-router-dom";
 import BookCard from "./BookCard";
-import { Author, Book } from "../../types";
 import Page from "../../components/Page";
+import Loading from "../../components/Loading";
+import Button from "@mui/material/Button";
+import { useAuthorData, useBooksByAuthor } from "../../services/hooks";
+import { useMemo } from "react";
 
 const BooksPage = () => {
-  const { id } = useParams<{ id: string }>();
-  const [books, setBooks] = useState<Book[]>([]);
-  const [authorData, setAuthorData] = useState<Author>();
+  const { authorId } = useParams<{ authorId: string }>();
+  const {
+    data: books,
+    isLoading: isBooksLoading,
+    error: booksError,
+  } = useBooksByAuthor(authorId!);
+  const {
+    data: authorData,
+    isLoading: isAuthorLoading,
+    error: authorError,
+  } = useAuthorData(authorId!);
 
-  const [error, setError] = useState<string>("");
+  const isLoading = useMemo(() => {
+    return isBooksLoading || isAuthorLoading;
+  }, [isBooksLoading, isAuthorLoading]);
 
-  useEffect(() => {
-    if (id) {
-      const fetchData = async () => {
-        try {
-          const booksData = await fetchBooks(Number(id));
-          const authorData = await fetchAuthorById(Number(id));
-          setBooks(booksData);
-          setAuthorData(authorData);
-        } catch (err: any) {
-          setError(
-            "An error occurred while fetching authors. Please try again later."
-          );
-        }
-      };
-
-      fetchData();
-    }
-  }, [id]);
 
   return (
-    <Page title={`Books By ${authorData?.name}`}>
-      <div className="max-h-screen overflow-y-auto no-scrollbar">
-        {books?.map((book) => (
-          <BookCard key={book.id} book={book} />
-        ))}
+    <Page title={`Books By ${authorData?.name}`} showBackButton={true}>
+      <div className="max-h-screen overflow-y-auto no-scrollbar w-full">
+        {isLoading && <Loading />}
+        {!isLoading &&
+          books?.map((book) => <BookCard key={book.id} book={book} />)}
       </div>
     </Page>
   );
