@@ -7,6 +7,7 @@ This is a web application for displaying authors and their books, built with **N
 ## **How to run the project**
 
 ### **1. Install dependencies**
+Install PostgreSQL if you dont have it already.
 
 ```bash
 
