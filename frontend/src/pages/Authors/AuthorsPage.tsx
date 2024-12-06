@@ -1,7 +1,5 @@
 import Page from "../../components/Page";
 import AuthorCard from "./AuthorCard";
-import Loading from "../../components/Loading";
-import ErrorNotification from "../../components/ErrorNotification";
 import { useAuthors } from "../../services/hooks";
 import { CircularProgress, Snackbar } from "@mui/material";
 
